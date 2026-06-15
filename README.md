@@ -18,25 +18,17 @@ Computer 2 (planner.txt — second file)
 
 <br>
 
-## Agents Key Takeaways
+## Agents Key Takeaways Report
 
 <br>
 Both machines have 500 GB primary disks. Computer 1 is using slightly more space (12 GB / 19%) compared to Computer 2 (8 GB / 16%), leaving Computer 2 with a bit more available space (59 GB vs. 55 GB). Both are well within healthy usage ranges on their primary volumes.
 Note: It looks like both files were uploaded with the same name (planner.txt). You may have intended to upload two different files — if so, feel free to re-upload and I can redo the summary.
 <br>
-Option 2: Agentic Claude Code
-cmd:	claude "Read planner1.txt and planner2.txt and summarize the disk capacity of each"
-Claude Code works well for this:
-	•	It reads files from your filesystem automatically — no coding required
-	•	You can point it at any number of files: "summarize all .txt files in this folder"
-	•	You can refine the output conversationally, e.g. "now format that as a table"
-	•	It can be scripted and scheduled (e.g. via cron) for recurring reports
-
-    •	To run it on a schedule (e.g. daily disk report):
-
-bash
+<br>
 
 ## Setup Solution
+
+The following are steps to setup a similar agent for local development.
 
 # Add a Cronjob
 
