@@ -41,7 +41,7 @@ Once the project is setup, generate reports using crontab to create a job that r
 
 <br>
 
-The cronjob will run at 8am everyday until removed. The report disk_summary.log is the output from the agent after reading and summarizing all `vndisk*[0-9].txt` files which summarize VM capacity details. It also provides suggestions for next steps.
+The cronjob will run at 8am everyday until removed. The report disk_summary.log is the output from the agent after reading and summarizing all `vmdisk[0-9].txt` files which summarize VM capacity details. It also provides suggestions for next steps.
 
 # About Tokens
 
