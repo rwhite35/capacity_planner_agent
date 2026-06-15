@@ -34,18 +34,22 @@ The following are steps to setup a similar agent for local development.
 
 Once the project is setup, generate reports using crontab to create a job that runs the `disk free` command on each of the VirtualMachines with the report saved to the projects `capacity/planner.txt` file location.
 
-> crontab -e
-> VMS=["path/to/vmproj1","path/to/vmproj2"]
-> PATH=/bin:/path/to/CapacityPlanner
-> 0 8 \* \* _ summarize_planner.py $VMS && claude "Read /var/reports/vmdisk_.txt and summarize capacity" >> ~/disk_summary.log
+> crontab -e <br>
+> VMS=["path/to/vmproj1","path/to/vmproj2"] <br>
+> PATH=/bin:/path/to/CapacityPlanner <br>
+> 0 8 \* \* \* summarize_planner.py $VMS && claude "Read /var/reports/vmdisk\*\.txt and summarize capacity" \>\> ~/disk_summary.log <br>
 
-This cronjob will run at 8am EST everyday until removed. The report disk*summary.log is the output from the claude agent reading in all the `vndisk*[0-9].txt` files which then summarizes the capacity details and suggestions.
+<br>
+
+The cronjob will run at 8am everyday until removed. The report disk_summary.log is the output from the agent after reading and summarizing all `vndisk*[0-9].txt` files which summarize VM capacity details. It also provides suggestions for next steps.
 
 # About Tokens
 
-Depending on the account type and level of token use, this call is .01 cent per request.
+Depending on the account type, request size, and features/tools used determines the cost and size of the token. This request was .01 cent.
 
 [Token]
+
+Similar sized Hello World request
 
 ```
 curl https://api.anthropic.com/v1/messages \
